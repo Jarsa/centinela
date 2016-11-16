@@ -9,4 +9,11 @@ class CentinelResponsability(models.Model):
     _name = 'centinel.responsability'
     _description = "Service Responsability"
 
-    team 
+    equipment = fields.Char()
+    economic = fields.Char()
+    task_complexity = fields.Char()
+    confidential_info = fields.Char()
+    relationship_hability = fields.Char()
+    security_risk = fields.Char()
+    # quotation_id = fields.Many2one(
+    #     'centinel.quotation')

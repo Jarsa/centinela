@@ -1,4 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_centinel_quotation,access_centinel_quotation,model_centinel_quotation,,1,1,1,1
 access_centinel_service,access_centinel_service,model_centinel_service,,1,1,1,1
-
+access_centinel_subgroup,access_centinel_subgroup,model_centinel_subgroup,,1,1,1,1

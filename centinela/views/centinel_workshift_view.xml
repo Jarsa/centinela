@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="centinel_workshift_form" model="ir.ui.view">
+			<field name="name">Workshift</field>
+			<field name="model">centinel.workshift</field>
+			<field name="arch" type="xml">
+				<form string="Workshift">
+					<sheet>
+						<group>
+							<field name='name' required='1'/>
+						</group>
+						<group>
+							<notebook>
+								<page string='Subgroups'>
+									<field name='subgroup_ids' nolabel='1'/>
+								</page>
+							</notebook>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="centinel_workshift_tree" model="ir.ui.view">
+			<field name="name">Workshift</field>
+			<field name="model">centinel.workshift</field>
+			<field name="arch" type="xml">
+				<tree string="Workshifts">
+					<field name='name'/>
+				</tree>
+			</field>
+		</record>
+		<record id="action_centinel_workshift" model="ir.actions.act_window">
+			<field name="name">Workshift</field>
+			<field name="res_model">centinel.workshift</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form, tree</field>
+		</record>
+	</data>
+</odoo>

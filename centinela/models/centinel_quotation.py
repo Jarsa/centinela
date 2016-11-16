@@ -2,7 +2,7 @@
 # © <2016> <Jarsa Sistemas, S.A. de C.V.>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models
+from openerp import api, fields, models
 
 
 class CentinelQuotation(models.Model):
@@ -37,3 +37,12 @@ class CentinelQuotation(models.Model):
         'centinel.service',
         'quotation_id',
         string='Service')
+    # responsability_ids = fields.One2many(
+    #     'centinel.responsability',
+    #     'quotation_id',
+    #     string='Responsabilitys')
+
+    @api.model
+    def create(self, values):
+        quotation = super(CentinelQuotation, self).create(values)
+        return quotation

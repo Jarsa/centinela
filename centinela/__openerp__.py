@@ -15,9 +15,12 @@
     'depends': [],
     'data': [
         'security/ir.model.access.csv',
-        'views/centinel_views.xml',
         'views/centinel_quotation_view.xml',
         'views/centinel_service_view.xml',
+        'views/centinel_group_view.xml',
+        'views/centinel_views.xml',
+        'views/centinel_workshift_view.xml',
+        'views/centinel_subgroup_view.xml',
     ],
     'installable': True,
     'active': True

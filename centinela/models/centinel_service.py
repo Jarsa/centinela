@@ -17,9 +17,12 @@ class CentinelService(models.Model):
         ('24x48', '24 x 48'),
         ('24x24', '24 x 24'),
         ], default='12x12')
-    group = fields.Char()
     turn = fields.Char()
-    subgroup_ids = fields.One2many(
-        'centinel.subgroup',
+    group_ids = fields.One2many(
+        'centinel.group',
         'service_id',
         string='Subgroups')
+    quotation_id = fields.Many2one(
+        'centinel.quotation')
+    stand_id = fields.Many2one(
+        'centinel.stand')

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <menuitem icon="fa-truck" id="menu_tms" name="Centinel" sequence="10" web_icon="tms,static/description/icon.png"/>
-        <menuitem id="menu_tms_travels" name="Freights" parent="menu_tms" sequence="10"/>
-        <menuitem id="menu_tms_settings" name="Quotation" action='action_centinel_quotation' parent="menu_tms" sequence="99"/>
+        <menuitem icon="fa-truck" id="menu_centinel" name="Centinel" sequence="10"/>
+        <menuitem id="menu_centinel_quotation" name="Quotation" action='centinela.action_centinel_quotation' parent="menu_centinel" sequence="20"/>
     </data>
 </odoo>

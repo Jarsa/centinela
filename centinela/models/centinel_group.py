@@ -5,16 +5,17 @@
 from openerp import fields, models
 
 
-class CentinelSubgroup(models.Model):
-    _name = 'centinel.subgroup'
-    _description = 'Quotation from salesman'
+class CentinelGroup(models.Model):
+    _name = 'centinel.group'
+    _description = 'Groups for service'
 
     name = fields.Char()
-    workshift_id = fields.Many2one(
-        'centinel.workshift')
     rol = fields.Char()
-    vacancy_id = fields.Many2one(
-        'res.partner',
-        string='Vacancy')
     start_date = fields.Datetime()
     end_date = fields.Datetime()
+    service_id = fields.Many2one(
+        'centinel.service')
+    workshift_ids = fields.One2many(
+        'centinel.workshift',
+        'group_id',
+        string='Workshifts')
