@@ -10,9 +10,6 @@ class CentinelGroup(models.Model):
     _description = 'Groups for service'
 
     name = fields.Char()
-    rol = fields.Char()
-    start_date = fields.Datetime()
-    end_date = fields.Datetime()
     service_id = fields.Many2one(
         'centinel.service')
     workshift_ids = fields.One2many(

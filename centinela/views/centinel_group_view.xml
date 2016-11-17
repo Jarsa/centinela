@@ -7,14 +7,9 @@
 			<field name="arch" type="xml">
 				<form string="Subgroup">
 					<sheet>
-						<group string='Group'>
-							<group col="4" colspan="2">
-								<field name='name'/>
-								<field name='rol'/>
-								<field name='start_date'/>
-								<field name='end_date'/>
-							</group>
-						</group>
+						<h1>
+							<field name='name' placeholder='Group name' nolabel='1' required='1'/>
+						</h1>
 						<group>
 							<notebook>
 								<page string='Workshift'>
@@ -32,9 +27,6 @@
 			<field name="arch" type="xml">
 				<tree string="Groups">
 					<field name='name'/>
-					<field name='rol'/>
-					<field name='start_date'/>
-					<field name='end_date'/>
 				</tree>
 			</field>
 		</record>

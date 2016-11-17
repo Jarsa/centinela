@@ -6,7 +6,7 @@ from openerp import fields, models
 
 
 class CentinelWorkCondition(models.Model):
-    _name = 'centinel.work.conditions'
+    _name = 'centinel.work.condition'
     _description = 'Work description for quotation'
 
     description = fields.Char()
@@ -21,3 +21,5 @@ class CentinelWorkCondition(models.Model):
     plant_risk = fields.Char()
     crimen_risk = fields.Char()
     resources_risk = fields.Char()
+    rol_id = fields.Many2one(
+        'centinel.rol')

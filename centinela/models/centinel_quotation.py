@@ -33,14 +33,9 @@ class CentinelQuotation(models.Model):
         ('30_min', 'A half of hour from distance'),
         ('3_km', '3 km from distance'),
         ], default='10_min')
-    service_ids = fields.One2many(
-        'centinel.service',
-        'quotation_id',
-        string='Service')
-    # responsability_ids = fields.One2many(
-    #     'centinel.responsability',
-    #     'quotation_id',
-    #     string='Responsabilitys')
+    stand_ids = fields.One2many(
+        'centinel.stand',
+        'quotation_id')
 
     @api.model
     def create(self, values):

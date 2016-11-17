@@ -8,7 +8,9 @@
 				<form string="Workshift">
 					<sheet>
 						<group>
-							<field name='name' required='1'/>
+							<h1>
+								<field name='name' required='1' nolabel='1' placeholder='Workshift name'/>
+							</h1>
 						</group>
 						<group>
 							<notebook>

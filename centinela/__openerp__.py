@@ -21,6 +21,9 @@
         'views/centinel_views.xml',
         'views/centinel_workshift_view.xml',
         'views/centinel_subgroup_view.xml',
+        'views/centinel_responsability_view.xml',
+        'views/centinel_workcondition_view.xml',
+        'views/centinel_stand_view.xml',
     ],
     'installable': True,
     'active': True

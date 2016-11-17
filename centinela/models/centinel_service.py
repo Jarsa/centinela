@@ -25,4 +25,4 @@ class CentinelService(models.Model):
     quotation_id = fields.Many2one(
         'centinel.quotation')
     stand_id = fields.Many2one(
-        'centinel.stand')
+        'centincel.stand')

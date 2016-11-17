@@ -12,9 +12,6 @@ class CentinelSubgroup(models.Model):
     name = fields.Char()
     workshift_id = fields.Many2one(
         'centinel.workshift')
-    rol = fields.Char()
-    vacancy_id = fields.Many2one(
-        'res.partner',
-        string='Vacancy')
-    start_date = fields.Datetime()
-    end_date = fields.Datetime()
+    rol_id = fields.One2many(
+        'centinel.rol',
+        'workshift_id')

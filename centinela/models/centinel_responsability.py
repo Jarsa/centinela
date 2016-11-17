@@ -15,5 +15,5 @@ class CentinelResponsability(models.Model):
     confidential_info = fields.Char()
     relationship_hability = fields.Char()
     security_risk = fields.Char()
-    # quotation_id = fields.Many2one(
-    #     'centinel.quotation')
+    rol_id = fields.Many2one(
+        'centinel.rol')

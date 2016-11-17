@@ -7,11 +7,14 @@
 			<field name="arch" type="xml">
 				<form string="Subgroup">
 					<sheet>
-						<field name='name'/>
-						<field name='rol'/>
-						<field name='start_date'/>
-						<field name='end_date'/>
-						<field name='vacancy_id'/>
+						<h1>
+							<field name='name' nolabel='1' placeholder='1'/>
+						</h1>
+						<notebook>
+							<page string='Rol'>
+								<field name='rol_id' nolabel='1'/>
+							</page>
+						</notebook>
 					</sheet>
 				</form>
 			</field>
@@ -20,12 +23,8 @@
 			<field name="name">Subgroup</field>
 			<field name="model">centinel.subgroup</field>
 			<field name="arch" type="xml">
-				<tree string="Vacancy post" editable='top'>
+				<tree string="Vacancy post">
 					<field name='name'/>
-					<field name='rol'/>
-					<field name='start_date'/>
-					<field name='end_date'/>
-					<field name='vacancy_id'/>
 				</tree>
 			</field>
 		</record>
