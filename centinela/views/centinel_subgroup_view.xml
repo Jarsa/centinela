@@ -32,7 +32,7 @@
 			<field name="name">Group</field>
 			<field name="res_model">centinel.subgroup</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">form, tree</field>
+			<field name="view_mode">tree,form</field>
 		</record>
 	</data>
 </odoo>

@@ -11,7 +11,9 @@ class CentinelStand(models.Model):
 
     name = fields.Char()
     service_ids = fields.One2many(
-    	'centinel.service',
-    	'stand_id')
+        'centinel.service',
+        'stand_id',
+        string='Service')
     quotation_id = fields.Many2one(
-        'centinel.quotation')
+        'centinel.quotation',
+        string='Quotation')

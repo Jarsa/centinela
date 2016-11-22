@@ -28,15 +28,6 @@
                             <page string='Stand'> 
                                 <field name='stand_ids' nolabel='1'/>
                             </page>
-                            <!-- <page string="Services">
-                                <field colspan="4" name="service_ids" nolabel="1"/>
-                            </page>
-                            <page string='Workconditions'>
-                                <field colspan='4' name='work_condition_ids' nolabel='1'/>
-                            </page>
-                            <page string='Responsabilities'>
-                                <field name='responsability_ids' nolabel='1'/>
-                            </page> -->
                         </notebook>
                     </sheet>
                 </form>

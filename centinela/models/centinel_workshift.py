@@ -14,4 +14,5 @@ class CentinelWorkshift(models.Model):
         'centinel.group')
     subgroup_ids = fields.One2many(
         'centinel.subgroup',
-        'workshift_id')
+        'workshift_id',
+        string='Subgroups')

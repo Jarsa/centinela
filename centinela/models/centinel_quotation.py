@@ -35,7 +35,8 @@ class CentinelQuotation(models.Model):
         ], default='10_min')
     stand_ids = fields.One2many(
         'centinel.stand',
-        'quotation_id')
+        'quotation_id',
+        string='Stand')
 
     @api.model
     def create(self, values):
