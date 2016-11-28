@@ -23,6 +23,8 @@
         'views/centinel_stand_view.xml',
         'views/centinel_standar_cost_view.xml',
         'views/centinel_rol_view.xml',
+        'views/centinel_vacancy_view.xml',
+        'views/centinel_supervisor_view.xml',
         'views/centinel_views.xml',
     ],
     'installable': True,

@@ -22,7 +22,9 @@ class CentinelQuotation(models.Model):
         ('lost', 'Lost'),
         ], default='prospect')
     customer_id = fields.Many2one(
-        'res.partner', string='Customer')
+        'res.partner',
+        string='Customer',
+        domain=[('customer', '=', 'True')])
     customer_type = fields.Char()
     location = fields.Char()
     latitude = fields.Float()
@@ -41,4 +43,6 @@ class CentinelQuotation(models.Model):
     @api.model
     def create(self, values):
         quotation = super(CentinelQuotation, self).create(values)
+        quotation.name = self.env['centinel.quotation'].search(
+            []).ids[-1] + 1
         return quotation

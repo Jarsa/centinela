@@ -21,7 +21,7 @@ class CentinelService(models.Model):
     group_ids = fields.One2many(
         'centinel.group',
         'service_id',
-        string='Subgroups')
+        string='Groups')
     quotation_id = fields.Many2one(
         'centinel.quotation')
     stand_id = fields.Many2one(

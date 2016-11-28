@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id='centinel_vacancy_form' model='ir.ui.view'>
+			<field name='name'>centinel.vacancy.form</field>
+			<field name='model'>centinel.vacancy</field>
+			<field name='arch' type='xml'>
+				<form string='Vacancy'>
+					<sheet>
+						<group>
+							<field name='name' readonly='1'/>
+							<field name='attachment'/>
+							<field name='origin_address'/>
+							<field name='origin_latitude'/>
+							<field name='origin_day'/>
+							<field name='destiny_address'/>
+							<field name='destiny_latitude'/>
+							<field name='destiny_day'/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="centinel_vacancy_tree" model="ir.ui.view">
+			<field name="name">Vacancy</field>
+			<field name="model">centinel.vacancy</field>
+			<field name="arch" type="xml">
+				<tree string="Vacancy post">
+					<field name='name' readonly='1'/>
+					<field name='attachment'/>
+					<field name='origin_address'/>
+					<field name='origin_latitude'/>
+					<field name='origin_day'/>
+					<field name='destiny_address'/>
+					<field name='destiny_latitude'/>
+					<field name='destiny_day'/>
+				</tree>
+			</field>
+		</record>
+		<record id="action_centinel_vacancy" model="ir.actions.act_window">
+			<field name="name">Vacancy</field>
+			<field name="res_model">centinel.vacancy</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+	</data>
+</odoo>

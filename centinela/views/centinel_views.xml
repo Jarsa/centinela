@@ -4,5 +4,7 @@
         <menuitem icon="fa-truck" id="menu_centinel" name="Centinel" sequence="10"/>
         <menuitem id="menu_centinel_quotation" name="Quotation" action='centinela.action_centinel_quotation' parent="menu_centinel" sequence="20"/>
         <menuitem id="menu_centinel_standar_cost" name="Standar cost" action='centinela.action_centinel_standar_cost' parent="menu_centinel" sequence="30"/>
+        <menuitem id="menu_centinel_vacancy" name="Vacancy" action='centinela.action_centinel_vacancy' parent="menu_centinel" sequence="40"/>
+        <menuitem id="menu_centinel_supervisor" name="Supervisor" parent="menu_centinel" action="centinela.action_centinel_supervisor"/>
     </data>
 </odoo>

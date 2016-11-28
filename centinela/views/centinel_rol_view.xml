@@ -7,10 +7,15 @@
 			<field name="arch" type="xml">
 				<form string="rol">
 					<sheet>
-						<group colspan="2" col="4">
+						<group>
 							<h1>
 								<field name="name" placeholder='Rol name' required='1' nolabel='1'/>
 							</h1>
+						</group>
+						<group>
+							<h2>
+								<field name='vacancy'/>
+							</h2>
 						</group>
 						<group>
 							<notebook>
@@ -61,9 +66,6 @@
 											<field name='scolarship_level'/>
 										</group>
 									</group>
-								</page>
-								<page string='Vacancy'>
-									<field name='vacancy_ids' nolabel='1'/>
 								</page>
 							</notebook>
 						</group>

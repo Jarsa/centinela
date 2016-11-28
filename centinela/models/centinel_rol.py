@@ -2,7 +2,7 @@
 # © <2016> <Jarsa Sistemas, S.A. de C.V.>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models
+from openerp import api, fields, models
 
 
 class CentinelRol(models.Model):
@@ -50,5 +50,27 @@ class CentinelRol(models.Model):
         ('secundaria', 'Secundaria'),
         ('preparatoria', 'Preparatoria'),
         ('no_importa', 'No importa')])
+    vacancy = fields.Integer(
+        string='How many vacancy'
+        ' could have this role?')
     vacancy_ids = fields.One2many(
+        'centinel.vacancy',
+        'rol_id',
         string='Vacancy')
+
+    @api.model
+    def create(self, values):
+        res = super(CentinelRol, self).create(values)
+        vacancy_obj = self.env['centinel.vacancy']
+        i = 0
+        while i <= res.vacancy:
+            if len(vacancy_obj.search([]).ids) <= 0:
+                    name = 1
+            else:
+                name = vacancy_obj.search([]).ids[-1] + 1
+            vacancy_obj.create({
+                'name': str(name),
+                'rol_id': res.id,
+                })
+            i += 1
+        return res

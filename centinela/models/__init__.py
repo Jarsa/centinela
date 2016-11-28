@@ -10,3 +10,5 @@ from . import centinel_stand
 from . import centinel_subgroup
 from . import centinel_workshift
 from . import centinel_standar_cost
+from . import centinel_vacancy
+from . import centinel_supervisor
