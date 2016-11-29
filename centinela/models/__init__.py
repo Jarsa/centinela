@@ -11,4 +11,6 @@ from . import centinel_subgroup
 from . import centinel_workshift
 from . import centinel_standar_cost
 from . import centinel_vacancy
-from . import centinel_supervisor
+from . import centinel_activity
+from . import centinel_course
+from . import centinel_test

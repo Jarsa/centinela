@@ -58,11 +58,10 @@ class CentinelRol(models.Model):
         'rol_id',
         string='Vacancy')
 
-    @api.model
-    def create(self, values):
-        res = super(CentinelRol, self).create(values)
+    @api.multi
+    def create_vacancies(self, res):
         vacancy_obj = self.env['centinel.vacancy']
-        i = 0
+        i = 1
         while i <= res.vacancy:
             if len(vacancy_obj.search([]).ids) <= 0:
                     name = 1
@@ -73,4 +72,17 @@ class CentinelRol(models.Model):
                 'rol_id': res.id,
                 })
             i += 1
+
+    @api.model
+    def create(self, values):
+        res = super(CentinelRol, self).create(values)
+        res.create_vacancies(res)
         return res
+
+    @api.multi
+    def write(self, values):
+        for rec in self:
+            res = super(CentinelRol, self).write(values)
+            rec.vacancy_ids.unlink()
+            rec.create_vacancies(rec)
+            return res

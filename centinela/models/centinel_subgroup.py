@@ -13,7 +13,7 @@ class CentinelSubgroup(models.Model):
     workshift_id = fields.Many2one(
         'centinel.workshift',
         string='Workshift')
-    rol_id = fields.One2many(
+    rol_ids = fields.One2many(
         'centinel.rol',
         'workshift_id',
         string='Rol')

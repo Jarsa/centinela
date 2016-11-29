@@ -11,8 +11,14 @@ class CentinelQuotation(models.Model):
 
     name = fields.Char(
         string='Name')
+    nbr_vacancies = fields.Integer(
+        compute='_compute_nbr_vacancies',
+        string='Vacancies')
     date = fields.Datetime(
         default=fields.Datetime.now)
+    user_id = fields.Many2one(
+        'res.partner',
+        string='User')
     state = fields.Selection([
         ('suspect', 'Suspect'),
         ('prospect', 'Prospect'),
@@ -46,3 +52,42 @@ class CentinelQuotation(models.Model):
         quotation.name = self.env['centinel.quotation'].search(
             []).ids[-1] + 1
         return quotation
+
+    @api.depends('customer_id')
+    def onchange_vacancies(self):
+        for rec in self:
+            rec.vacancy_ids = []
+            for stand in rec.stand_ids:
+                for service in stand.service_ids:
+                    for group in service.group_ids:
+                        for works in group.workshift_ids:
+                            for sog in works.subgroup_ids:
+                                for rol in sog.rol_id:
+                                    for vac in rol.vacancy_ids:
+                                        rec.vacancy_ids += vac
+
+    @api.multi
+    def quotation_vacancies(self):
+        for rec in self:
+            roles = (
+                rec.stand_ids.service_ids.group_ids.
+                workshift_ids.subgroup_ids.rol_ids)
+
+            return {
+                'name': 'Vacancies',
+                'view_type': 'form',
+                'view_mode': 'tree,form',
+                'res_model': 'centinel.vacancy',
+                'domain': [('rol_id', 'in', roles.ids)],
+                'type': 'ir.actions.act_window'}
+
+    @api.depends('stand_ids')
+    def _compute_nbr_vacancies(self):
+        for rec in self:
+            vacancies = []
+            roles = (
+                rec.stand_ids.service_ids.group_ids.
+                workshift_ids.subgroup_ids.rol_ids)
+            for rol in roles:
+                vacancies.extend(rol.vacancy_ids.ids)
+            rec.nbr_vacancies = len(vacancies)

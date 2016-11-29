@@ -12,7 +12,7 @@
 						</h1>
 						<notebook>
 							<page string='Rol'>
-								<field name='rol_id' nolabel='1'/>
+								<field name='rol_ids' nolabel='1'/>
 							</page>
 						</notebook>
 					</sheet>

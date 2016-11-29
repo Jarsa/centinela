@@ -10,14 +10,10 @@ class CentinelVacancy(models.Model):
     _description = 'Vacancy for rol'
 
     name = fields.Char(string='Vacancy')
-    rol_id = fields.Many2one(
-        'centinel.rol',
-        string='Rol')
-    supervisor_id = fields.Many2one(
-        'centinel.supervisor',
-        string='Supervisor')
-    activity = fields.Char(
-        string='New model with selection widget')
+    activity_id = fields.Many2one(
+        'centinel.activity',
+        string='Activity',
+        domain="[('active', '=', True)]")
     how_to = fields.Char()
     attachment = fields.Binary()
     origin_address = fields.Char()
@@ -30,4 +26,21 @@ class CentinelVacancy(models.Model):
     destiny_longitude = fields.Char()
     destiny_hour = fields.Char()
     destiny_day = fields.Datetime()
-    supervisor_id = fields.Many2one('centinel.supervisor')
+    rol_id = fields.Many2one(
+        'centinel.rol',
+        string='Rol')
+    quotation_id = fields.Many2one(
+        'centinel.quotation',
+        string='Supervisor')
+    course_ids = fields.Many2many(
+        'centinel.course',
+        string='Courses')
+    test_ids = fields.Many2many(
+        'centinel.test',
+        string='Tests')
+    tool_ids = fields.Many2many(
+        'product.product',
+        string='Tools')
+    weapon_ids = fields.Many2many(
+        'product.product',
+        string='Weapons')

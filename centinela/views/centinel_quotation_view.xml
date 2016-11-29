@@ -7,7 +7,13 @@
             <field name="arch" type="xml">
                 <form string="Quotation">
                     <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" icon="fa-users" name="quotation_vacancies" type="object">
+                                <field name="nbr_vacancies" widget="statinfo"/>
+                            </button>
+                        </div>
                         <h1>
+                            <label class='oe_inline' style="font-size:30px;" string='Quotation - '/>
                             <field name="name" readonly="1"/>
                         </h1>
                         <group>
@@ -38,6 +44,7 @@
             <field name="model">centinel.quotation</field>
             <field name="arch" type="xml">
                 <tree string="Quotation">
+                    <field name='name'/>
                     <field name="date"/>
                     <field name="state"/>
                     <field name="customer_id"/>

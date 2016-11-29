@@ -7,16 +7,54 @@
 			<field name='arch' type='xml'>
 				<form string='Vacancy'>
 					<sheet>
-						<group>
+						<h1>
+							<label class='oe_inline' style="font-size:30px;" string='Vacancy - '/>
 							<field name='name' readonly='1'/>
-							<field name='attachment'/>
-							<field name='origin_address'/>
-							<field name='origin_latitude'/>
-							<field name='origin_day'/>
-							<field name='destiny_address'/>
-							<field name='destiny_latitude'/>
-							<field name='destiny_day'/>
+						</h1>
+						<group>
+							<label class='oe_inline' style='font-size:30px;' string='Activity:'/>
+							<h2>
+								<field name='activity_id' widget='selection'/>
+							</h2>
 						</group>
+						<group>
+							<group>								
+								<field name='course_ids' widget="many2many_tags"/>
+								<field name='test_ids' widget="many2many_tags"/>
+							</group>
+							<group>
+								<field name='tool_ids' widget="many2many_tags"/>
+								<field name='weapon_ids' widget="many2many_tags"/>
+							</group>
+						</group>
+						<notebook>
+							<page string='From'>
+								<group colspan='4'>
+									<field name='origin_address'/>
+								</group>
+								<group col='4' colspan='2'>
+									<field name='origin_latitude'/>
+									<field name='origin_longitude'/>
+								</group>
+							</page>
+							<page string='To'>
+								<group colspan='4'>
+									<field name='destiny_address'/>
+								</group>
+								<group col='4' colspan='2'>
+									<field name='destiny_latitude'/>
+									<field name='destiny_longitude'/>
+								</group>
+							</page>
+							<page string='When'>
+								<group>
+									<field name='origin_day'/>
+								</group>
+								<group>
+									<field name='destiny_day'/>
+								</group>
+							</page>
+						</notebook>
 					</sheet>
 				</form>
 			</field>
