@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="centinel_quotation_form" model="ir.ui.view">
+            <field name="name">Quotation</field>
+            <field name="model">centinel.quotation</field>
+            <field name="arch" type="xml">
+                <form string="Quotation">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" icon="fa-users" name="quotation_vacancies" type="object">
+                                <field name="nbr_vacancies" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <h1>
+                            <label class='oe_inline' style="font-size:30px;" string='Quotation - '/>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                        <group>
+                            <group string="Customer information">
+                                <field name="customer_id"/>
+                                <field name="customer_type"/>
+                                <field name="latitude"/>
+                                <field name="longitude"/>
+                                <field name="address"/>
+                            </group>
+                            <group string="Recruitment Information">
+                                <field name="date"/>
+                                <field name="state"/>
+                                <field name="recruitment_zone"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string='Stand'> 
+                                <field name='stand_ids' nolabel='1'/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="centinel_quotation_tree" model="ir.ui.view">
+            <field name="name">Quotation</field>
+            <field name="model">centinel.quotation</field>
+            <field name="arch" type="xml">
+                <tree string="Quotation">
+                    <field name='name'/>
+                    <field name="date"/>
+                    <field name="state"/>
+                    <field name="customer_id"/>
+                    <field name="customer_type"/>
+                    <field name="latitude"/>
+                    <field name="longitude"/>
+                    <field name="address"/>
+                    <field name="recruitment_zone"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_centinel_quotation" model="ir.actions.act_window">
+            <field name="name">Quotation</field>
+            <field name="res_model">centinel.quotation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

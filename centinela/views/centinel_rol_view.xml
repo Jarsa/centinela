@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="centinel_rol_form" model="ir.ui.view">
+			<field name="name">rol</field>
+			<field name="model">centinel.rol</field>
+			<field name="arch" type="xml">
+				<form string="rol">
+					<sheet>
+						<group>
+							<h1>
+								<field name="name" placeholder='Rol name' required='1' nolabel='1'/>
+							</h1>
+						</group>
+						<group>
+							<h2>
+								<field name='vacancy'/>
+							</h2>
+						</group>
+						<group>
+							<notebook>
+								<page string='Work conditions'>
+									<group>
+										<group>
+											<field name='description' label='hola'/>
+											<field name='partners'/>
+											<field name='customers'/>
+											<field name='frecuent_problems'/>
+										</group>
+										<group>
+											<field name='negative_experience'/>
+											<field name='plant_risk'/>
+											<field name='crimen_risk'/>
+											<field name='resources_risk'/>
+										</group>
+									</group>
+								</page>
+								<page string='Responsabilities'>
+									<group>
+										<group>
+											<field name='equipment'/>
+											<field name='economic'/>
+											<field name='task_complexity'/>
+										</group>
+										<group>
+											<field name='confidential_info'/>
+											<field name='relationship_hability'/>
+											<field name='security_risk'/>
+										</group>
+									</group>
+								</page>
+								<page string='Aptitudes'>
+									<group>
+										<group>
+											<field name='required_effort'/>
+											<field name='complexity'/>
+											<field name='sex'/>
+											<field name='age'/>
+											<field name='mental_concentration'/>
+										</group>
+										<group>
+											<field name='basic_knowdlege'/>
+											<field name='experiency'/>
+											<field name='criteria'/>
+											<field name='hability'/>
+											<field name='scolarship_level'/>
+										</group>
+									</group>
+								</page>
+							</notebook>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="centinel_rol_tree" model="ir.ui.view">
+			<field name="name">Rol</field>
+			<field name="model">centinel.rol</field>
+			<field name="arch" type="xml">
+				<tree string="rol">
+					<field name='name'/>
+				</tree>
+			</field>
+		</record>
+		<record id="action_centinel_rol" model="ir.actions.act_window">
+			<field name="name">Rol</field>
+            <field name="res_model">centinel.rol</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+		</record>
+	</data>
+</odoo>

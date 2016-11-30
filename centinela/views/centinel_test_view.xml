@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="centinel_test_tree" model="ir.ui.view">
+			<field name="name">Test</field>
+			<field name="model">centinel.test</field>
+			<field name="arch" type="xml">
+				<tree string="Test" editable='top'>
+					<field name='name'/>
+					<field name='active'/>
+				</tree>
+			</field>
+		</record>
+		<record id="action_centinel_test" model="ir.actions.act_window">
+			<field name="name">courses</field>
+			<field name="res_model">centinel.test</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+	</data>
+</odoo>

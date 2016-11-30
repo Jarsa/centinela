@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_centinel_group,access_centinel_group,model_centinel_group,,1,1,1,1
+access_centinel_quotation,access_centinel_quotation,model_centinel_quotation,,1,1,1,1
+access_centinel_responsability,access_centinel_responsability,model_centinel_responsability,,1,1,1,1
+access_centinel_rol,access_centinel_rol,model_centinel_rol,,1,1,1,1
+access_centinel_service,access_centinel_service,model_centinel_service,,1,1,1,1
+access_centinel_stand,access_centinel_stand,model_centinel_stand,,1,1,1,1
+access_centinel_subgroup,access_centinel_subgroup,model_centinel_subgroup,,1,1,1,1
+access_centinel_work_condition,access_centinel_work_condition,model_centinel_work_condition,,1,1,1,1
+access_centinel_workshift,access_centinel_workshift,model_centinel_workshift,,1,1,1,1
+access_centinel_activity,access_centinel_activity,model_centinel_activity,,1,1,1,1
+access_centinel_standar_cost,access_centinel_standar_cost,model_centinel_standar_cost,,1,1,1,1
+access_centinel_vacancy,access_centinel_vacancy,model_centinel_vacancy,,1,1,1,1
+access_centinel_course,access_centinel_course,model_centinel_course,,1,1,1,1
+access_centinel_test,access_centinel_test,model_centinel_test,,1,1,1,1

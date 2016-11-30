@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="centinel_standar_cost_form" model="ir.ui.view">
+			<field name="name">standar.cost</field>
+			<field name="model">centinel.standar.cost</field>
+			<field name="arch" type="xml">
+				<form string="Standar cost">
+					<sheet>
+						<field name='salary'/>
+						<field name='bonus'/>
+						<field name='vacation'/>
+						<field name='social_security'/>
+						<field name='infonavit'/>
+						<field name='weapons_management'/>
+						<field name='pc_management'/>
+						<field name='bulletproof_vest'/>
+						<field name='helmet'/>
+						<field name='cellphone'/>
+						<field name='total_standar_cost'/>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="centinel_standar_cost_tree" model="ir.ui.view">
+			<field name="name">standar.cost</field>
+			<field name="model">centinel.standar.cost</field>
+			<field name="arch" type="xml">
+				<tree string="Vacancy post" editable='top'>
+					<field name='salary'/>
+					<field name='bonus'/>
+					<field name='vacation'/>
+					<field name='social_security'/>
+					<field name='infonavit'/>
+					<field name='weapons_management'/>
+					<field name='pc_management'/>
+					<field name='bulletproof_vest'/>
+					<field name='helmet'/>
+					<field name='cellphone'/>
+					<field name='total_standar_cost'/>
+					<field name='product_id'/>
+				</tree>
+			</field>
+		</record>
+		<record id="action_centinel_standar_cost" model="ir.actions.act_window">
+			<field name="name">Standar cost</field>
+			<field name="res_model">centinel.standar.cost</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+	</data>
+</odoo>
